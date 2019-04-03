@@ -83,6 +83,7 @@ python manage.py importgzfile <url>
 
 Here you can see an example of it running online:
 
+http://davidbarenco.pythonanywhere.com/
 
 *Valid until Wednesday 03 July 2019*
 
