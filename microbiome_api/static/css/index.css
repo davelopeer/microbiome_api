@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+body {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.paginator {
+  text-align: center;
+  margin: 20px;
+}
+
+.active {
+  background-color: #e2c044;
+  color: white!important;
+}
+
+.pag-btn {
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  padding: 2px 8px;
+  margin: 10px auto;
+  font-weight: bold;
+}
+
+.pag-btn:hover {
+  background-color: #e2c044;
+}

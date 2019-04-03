@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  </head>
+  <body>
+    <div class="paginator">
+      {% if is_paginated %}
+
+        {% if page_obj.has_previous %}
+          <a class="pag-btn" href="?page=1"><<</a>
+          <a class="pag-btn" href="?page={{ page_obj.previous_page_number }}"><</a>
+        {% endif %}
+
+        {% for num in page_obj.paginator.page_range %}
+          {% if page_obj.number == num %}
+            <a class="pag-btn active" href="?page={{ num }}">{{num}}</a>
+          {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <a class="pag-btn" href="?page={{ num }}">{{num}}</a>
+          {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+          <a class="pag-btn" href="?page={{ page_obj.next_page_number }}">></a>
+          <a class="pag-btn" href="?page={{ page_obj.paginator.num_pages }}">>></a>
+        {% endif %}
+
+      {% endif %}
+    </div>
+    <table>
+      <tr>
+        <th>Access Id</th>
+        <th>Kingdom</th>
+        <th>Specie</th>
+        <th>Sequence</th>
+      </tr>
+      {% for entry in entries %}
+      <tr>
+        <td>{{entry.access_id}}</td>
+        <td>{{entry.kingdom}}</td>
+        <td>{{entry.specie}}</td>
+        <td>{{entry.sequence}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
