@@ -30,7 +30,7 @@ You should be able to run this without a problem with `python manage.py runserve
 
 ## Checking it out
 
-Great! By now we should have our database filled with **plenty** of information and we can access it by our endpoints:
+Great! We have our database filled with **plenty** of information and we can access it by the following endpoints:
 
 - *localhost:8000/entries-table/* - Here can see a table with all the entries;
 - *localhost:8000/entry/* - This is an Django Rest Framework API screen for all the Entry objects;
@@ -47,7 +47,7 @@ Or filter by kingdom/specie:
 
 ## Creating our own database
 
-This project has it's database already filled with the informations needed, but we can do it ourselves from scratch or download a different *fasta.gz* file and get new data in the API.
+This project has it's database already filled with the informations needed, but we can do it ourselves from scratch or download a different *fasta.gz* file and get new data into API.
 
 ### Starting from scratch
 
@@ -59,9 +59,7 @@ To download ourselves the data from the url, we should follow the next steps:
 ```
 python manage.py migrate
 ```
-3. Now we need to import data to our database. For the purpose of this test, I've created a command for the manage.py file called `importgzfile`. It imports the information from a given url that has a *.fasta* file compressed in a *.gz* file and load the information to the database.
-
-This is the given url used for this project: https://www.arb-silva.de/fileadmin/silva_databases/release_128/Exports/SILVA_128_LSURef_tax_silva.fasta.gz
+3. For last, we need to import data to our database. For the purpose of this test, I've created a command for the manage.py file called `importgzfile`. It imports the information from a given url that has a *.fasta* file compressed in a *.gz* file and load the information to the database. This is the given url used for this project: https://www.arb-silva.de/fileadmin/silva_databases/release_128/Exports/SILVA_128_LSURef_tax_silva.fasta.gz
 
 So you need to prompt:
 
@@ -70,6 +68,15 @@ python manage.py importgzfile https://www.arb-silva.de/fileadmin/silva_databases
 ```
 
 A little warning. This is a large file, so this process may take a couple of minutes, depending on your pc and internet connection speed.
+
+
+### Downloand new content
+
+We can download new information to our API automatically if we have a download link of a *fasta.gz*. Then, we just have to run:
+
+```
+python manage.py importgzfile <url>
+```
 
 
 ## Example
