@@ -8,17 +8,35 @@ This API is the result of a job task. The task description is in a pdf file call
 
 ## Getting started
 
-In order to run this API locally, you must download the zip file containg this code and have installed in your computer python3.
+In order to run this API locally, you must download the zip file containing this code and have installed in your computer python3.
 
 ### Prerequisites
 
  - Download Python3: https://www.python.org/downloads/
 
-I also recommend you create a virtual environment in order to install the dependences for this project. You can see how in [here](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/).
+I also recommend you create a virtual environment in order to install the dependencies for this project. You can see how in [here](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/).
 
 ### Installing and running
 
-Now we need to set our dependences, and that couldn't be easier. Just go to the root folder of the project (the one with the manage.py file) and type the following in your prompt:
+#### Using docker
+
+With docker, it as easy as can be. Just run:
+
+```
+./scripts/run-dev.sh upd
+```
+
+And server will be listening on port [8000](http://localhost:8000).
+
+To stop the server, run:
+
+```
+./scripts/run-dev.sh down
+```
+
+#### Running manually
+
+For this, we need to set our dependencies, and that couldn't be easier. Just go to the root folder of the project (the one with the manage.py file) and type the following in your prompt:
 
 ```
 pip install -r requirements.txt
@@ -72,7 +90,7 @@ A little warning. This is a large file, so this process may take a couple of min
 
 ### Downloand new content
 
-We can download new information to our API automatically if we have a download link of a *fasta.gz*. Then, we just have to run:
+We can download new information to our API automatically if we have a download link of a *fasta.gz*. Then, we just have to run:  
 
 ```
 python manage.py importgzfile <url>
